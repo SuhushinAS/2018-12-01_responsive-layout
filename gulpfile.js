@@ -80,7 +80,12 @@ gulp.task('zip', () => {
 });
 
 gulp.task('upload', () => {
-    return pages.publish('prepared')
+    return pages.publish('prepared', {
+        branch: 'master',
+        dest: '2018-12-01_responsive-layout',
+        message: 'Update 2018-12-01_responsive-layout',
+        repo: 'git@github.com:SuhushinAS/suhushinas.github.io.git',
+    })
 });
 
 gulp.task('archive', gulp.series(
